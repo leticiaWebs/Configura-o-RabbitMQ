@@ -1,0 +1,16 @@
+ports: 
+     -25672:25672
+     -15672:15672:
+services:
+     rabbitmq:
+           image:rabbitmq3-management
+           container-name:rabbitmq
+volume:
+    docker_conf/rabbitmq/data/var/lib/rabbitmq
+envoriment:
+     RABBIT_DEFAULT_USER="ADMIN"
+     RABBIT_DEFAULT_PASS="pass123"
+volume:
+    log-folder
+     name:${log_rabbitmq_management}
+     drive:local
